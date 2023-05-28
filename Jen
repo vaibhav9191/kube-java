@@ -1,7 +1,7 @@
  pipeline{
     agent any
-    parameters{
-        choice(name:'action', choices: 'create\nrollback', description: 'create/rollback of deployment')
+    parameters {
+        choice(name: 'action', choices: 'create\nrollback', description: 'create/rollback of deployment')
     }
     
     tools{
@@ -11,7 +11,7 @@
 
         stage('git checkout'){
             when {
-                expression { parames.action == 'create'}
+                expression { params.action == 'create'}
             }
 
             steps{
