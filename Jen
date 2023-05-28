@@ -31,9 +31,12 @@
                 expression {params.action == 'create'}
             }
             steps{
-                dir("${params.AppName}"){
+                script{
                     sh 'mvn clean package'
                 }
+                // dir("${params.AppName}"){
+                //     sh 'mvn clean package'
+                // }
 
             }
 
