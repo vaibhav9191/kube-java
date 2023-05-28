@@ -2,7 +2,7 @@
     agent any
     parameters {
         choice(name: 'action', choices: 'create\nrollback', description: 'create/rollback of deployment')
-        string(name: 'Appname' , description: 'Name of Application' , deafulteValue: 'kube-configmap-reload')
+        string(name: 'Appname' , description: 'Name of Application' , deafultValue: 'kube-configmap-reload')
     }
     
     tools{
