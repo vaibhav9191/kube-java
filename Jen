@@ -8,7 +8,7 @@
 
         stage('git checkout') {
 
-            steps{
+            steps {
 
                 git changelog: false, poll: false, url: 'https://github.com/vaibhav9191/kube-java.git'
             }
