@@ -6,7 +6,7 @@
     }
     stages {
 
-        stage("git checkout") {
+        stage('git checkout') {
 
             stpes{
                 git changelog: false, poll: false, url: 'https://github.com/vaibhav9191/kube-java.git'
