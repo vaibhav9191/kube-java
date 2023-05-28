@@ -2,6 +2,7 @@
     agent any
     parameters {
         choice(name: 'action', choices: 'create\nrollback', description: 'create/rollback of deployment')
+        string(name: 'Appname' , description: 'Name of Application' , deafulteValue: 'kube-configmap-reload')
     }
     
     tools{
@@ -23,6 +24,20 @@
                //git branch: 'master', changelog: false, poll: false, url: 'https://github.com/vaibhav9191/kube-java.git'
             }
             
+
+        }
+        stage('Build Maven'){
+            when{
+                expression {params.action == 'create'}
+            }
+            steps{
+                dir("${params.AppName}"){
+                    sh 'mvn clean package'
+                }
+
+            }
+
+
 
         }
     }
