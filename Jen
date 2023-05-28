@@ -1,13 +1,12 @@
  pipeline{
     agent any
-    parameters{
-
-    }
+    
     tools{
         maven 'maven3'
     }
-    stages{
-        stage("git checkout"){
+    stages {
+
+        stage("git checkout") {
 
             stpes{
                 git changelog: false, poll: false, url: 'https://github.com/vaibhav9191/kube-java.git'
